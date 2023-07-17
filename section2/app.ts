@@ -1,16 +1,15 @@
-const add = (n1: number, n2: number): number => {
-  return n1 + n2;
-};
+let userInput: unknown;
+let userName: string;
 
-const printResult = (num: number): void => {
-  console.log("Result " + num);
-};
+userInput = 5;
+userInput = "Nig";
 
-printResult(add(10, 5));
+if (typeof userInput === "string") {
+  userName = userInput;
+}
 
-let combineValues: (a: number, b: number) => number;
+function generateError(message: string, code: number) {
+  throw { message: message, errorCode: code };
+}
 
-combineValues = add;
-// combineValues = 8
-
-console.log(add(8, 8));
+generateError("An error occured", 500);
